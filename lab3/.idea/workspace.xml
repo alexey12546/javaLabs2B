@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fc44d6b8-e001-4ab0-854d-b7e3dcbb092b" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/lab2/out/production/lab2/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/lab2/out/production/lab2/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lab2/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/lab2/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lab2/src/VichislFunction.java" beforeDir="false" afterPath="$PROJECT_DIR$/lab2/src/VichislFunction.java" afterDir="false" />
+    <list default="true" id="8356eff1-1aa6-4561-a16c-4ee1c93877de" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../lab2/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab2/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,30 +20,32 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectId" id="2XZaUKw3qzulGxwoz9uMWEiPJr8" />
+  <component name="ProjectId" id="2Xi5vx3KKi4qL2evBEWuC44CbZq" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="Unnamed" type="Application" factoryName="Application" nameIsGenerated="true">
-      <module name="javaLabs2B" />
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="lab3" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -54,13 +54,12 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="fc44d6b8-e001-4ab0-854d-b7e3dcbb092b" name="Changes" comment="" />
-      <created>1698839073798</created>
+      <changelist id="8356eff1-1aa6-4561-a16c-4ee1c93877de" name="Changes" comment="" />
+      <created>1699099296227</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1698839073798</updated>
-      <workItem from="1698839075809" duration="419000" />
-      <workItem from="1699906212721" duration="71000" />
+      <updated>1699099296227</updated>
+      <workItem from="1699099297621" duration="5293000" />
     </task>
     <servers />
   </component>

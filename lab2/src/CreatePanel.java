@@ -2,17 +2,13 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import static java.lang.Math.*;
-import static java.lang.Math.pow;
+public class CreatePanel extends JFrame{
+    private final JFrame jFrame = getFrame();
+    private final JPanel jPanel = new JPanel();
+    private double result = 0;
 
-public class VichislFunction {
-    private JFrame jFrame=getFrame();
-    private JPanel jPanel = new JPanel();
-    private double xRezult=0,yRezult=0,zRezult=0,rezult=0;
-
-
-
-    public void vichislFunction(){
+    public void createPanel() {
+        jFrame.setSize(600,500);
         jFrame.add(jPanel);
         jFrame.setTitle("Lab2");
         jPanel.setLayout(null);
@@ -23,7 +19,7 @@ public class VichislFunction {
         JLabel xLabel = new JLabel("x: ");
         JLabel yLabel = new JLabel("y: ");
         JLabel zLabel = new JLabel("z: ");
-        JLabel rezultLabel = new JLabel("rezult: ");
+        JLabel resultLabel = new JLabel("result: ");
         JRadioButton jRadioButton1 = new JRadioButton("Formula 1");
         JRadioButton jRadioButton2 = new JRadioButton("Formula 2");
         JRadioButton jRadioButtonX = new JRadioButton("Selected x");
@@ -40,8 +36,8 @@ public class VichislFunction {
         JLabel label2 = new JLabel(icon2);
         jRadioButton1.setSelected(true);
         jRadioButtonX.setSelected(true);
-        jPanel.add(label1).setBounds(100,60,314,30);
-        jPanel.add(label2).setBounds(100,60,330,62);
+        jPanel.add(label1).setBounds(100, 60, 314, 30);
+        jPanel.add(label2).setBounds(100, 60, 330, 62);
         label2.setVisible(false);
         buttonGroup1.add(jRadioButton1);
         buttonGroup1.add(jRadioButton2);
@@ -70,8 +66,8 @@ public class VichislFunction {
         jPanel.add(zLabel);
         zTextField.setBounds(360, 160, 100, 20);
         jPanel.add(zTextField);
-        rezultLabel.setBounds(155, 198, 45, 20);
-        jPanel.add(rezultLabel);
+        resultLabel.setBounds(155, 198, 45, 20);
+        jPanel.add(resultLabel);
         resultTextField.setBounds(200, 200, 130, 20);
         jPanel.add(resultTextField);
         jButton1.setBounds(220, 310, 100, 40);
@@ -80,7 +76,6 @@ public class VichislFunction {
         jPanel.add(jButton2);
         jButton3.setBounds(320, 250, 100, 40);
         jPanel.add(jButton3);
-
         jRadioButton1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -102,20 +97,20 @@ public class VichislFunction {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if (jRadioButton1.isSelected()) {
-                    rezult=returnResult1(xTextField,yTextField,zTextField,resultTextField);
+                    result = CalculationFunction.returnResult1(xTextField, yTextField, zTextField, resultTextField);
                 } else {
-                    rezult=returnResult2(xTextField,yTextField,zTextField,resultTextField);
+                    result = CalculationFunction.returnResult2(xTextField, yTextField, zTextField, resultTextField);
                 }
             }
         });
         jButton2.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if (jRadioButtonX.isSelected()){
+                if (jRadioButtonX.isSelected()) {
                     xTextField.setText("0");
-                }else if(jRadioButtonY.isSelected()){
+                } else if (jRadioButtonY.isSelected()) {
                     yTextField.setText("0");
-                }else{
+                } else {
                     zTextField.setText("0");
                 }
             }
@@ -123,54 +118,16 @@ public class VichislFunction {
         jButton3.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if (jRadioButtonX.isSelected()){
-                    String xText=xTextField.getText();
-                    xRezult = Double.parseDouble(xText.trim());
-                    xRezult+=rezult;
-                    String rezultValue = String.valueOf(xRezult);
-                    xTextField.setText(rezultValue);
-                }else if(jRadioButtonY.isSelected()){
-                    String yText=yTextField.getText();
-                    yRezult = Double.parseDouble(yText.trim());
-                    yRezult+=rezult;
-                    String rezultValue = String.valueOf(yRezult);
-                    yTextField.setText(rezultValue);
-                }else{
-                    String zText=zTextField.getText();
-                    zRezult = Double.parseDouble(zText.trim());
-                    zRezult+=rezult;
-                    String rezultValue = String.valueOf(zRezult);
-                    zTextField.setText(rezultValue);
+                if (jRadioButtonX.isSelected()) {
+                    variableFields(xTextField);
+                } else if (jRadioButtonY.isSelected()) {
+                    variableFields(yTextField);
+                } else {
+                    variableFields(zTextField);
                 }
             }
         });
         jPanel.revalidate();
-    }
-
-    static double returnResult1(JTextField xTextField,JTextField yTextField,JTextField zTextField,JTextField resultTextField){
-        String xValue = xTextField.getText();
-        String yValue = yTextField.getText();
-        String zValue = zTextField.getText();
-        double x = Double.parseDouble(xValue.trim());
-        double y = Double.parseDouble(yValue.trim());
-        double z = Double.parseDouble(zValue.trim());
-        double a = formula1(x, y, z);
-        String rezultValue = String.valueOf(a);
-        resultTextField.setText(rezultValue);
-        return a;
-    }
-
-    static double returnResult2(JTextField xTextField,JTextField yTextField,JTextField zTextField,JTextField resultTextField){
-        String xValue = xTextField.getText();
-        String yValue = yTextField.getText();
-        String zValue = zTextField.getText();
-        double x = Double.parseDouble(xValue.trim());
-        double y = Double.parseDouble(yValue.trim());
-        double z = Double.parseDouble(zValue.trim());
-        double a = formula2(x, y, z);
-        String rezultValue = String.valueOf(a);
-        resultTextField.setText(rezultValue);
-        return a;
     }
 
     static JFrame getFrame() {
@@ -181,13 +138,11 @@ public class VichislFunction {
         return jFrame;
     }
 
-    static double formula1(double x, double y, double z) {
-        double a = sin(log(y) + sin(PI * pow(y, 2))) * pow((pow(x, 2) + sin(z) + pow(E, cos(z))), 0.25);
-        return a;
-    }
-
-    static double formula2(double x, double y, double z) {
-        double a = (1 + pow(x, z) + log(pow(y, 2))) * (1 - sin(z * y)) / (pow((pow(x, 3) + 1), 0.5));
-        return a;
+    private void variableFields(JTextField value) {
+        String textField = value.getText();
+        double fieldResult = Double.parseDouble(textField.trim());
+        fieldResult += result;
+        String resultValue = String.valueOf(fieldResult);
+        value.setText(resultValue);
     }
 }
